@@ -10,6 +10,10 @@ using System.Windows.Forms;
 
 namespace Output.UserControls
 {
+    /// <summary>
+    /// Just represent the grid (which itself is
+    /// stored in _gridBits)
+    /// </summary>
     public partial class Grid : UserControl
     {
         //ICollection<Pixel> _gridPixels;
@@ -20,12 +24,18 @@ namespace Output.UserControls
 
         Timer _t;
 
-        const int PIXELS_PER_LINE = 50;
-        const int LINES_OF_PIXELS = 40;
+        private bool[,] _gridBits;
+        private int size;
 
-        public Grid()
+        private int tmp_val = 0;
+
+        public Grid() //We need a default constructor.
         {
             InitializeComponent();
+
+            this.size = 50;
+            this._gridBits = new bool[this.size, this.size];
+
             //_gridPixels = new List<Pixel>();
             this._gridPixels = new Dictionary<Point, Pixel>();
             this._rows = new Dictionary<int, FlowLayoutPanel>();
@@ -39,6 +49,19 @@ namespace Output.UserControls
             _t = new Timer();
             _t.Tick += OnTick;
             _t.Interval = 1000/4;
+        }
+
+        public bool[,] GridBits
+        {
+            get
+            {
+                return this._gridBits;
+            }
+            set
+            {
+                this._gridBits = value;
+                this.UpdateGrid(); //I'd perfer to make this an event handler.
+            }
         }
 
         void clearAll()
@@ -62,17 +85,17 @@ namespace Output.UserControls
             //This is a long loop....
             //What I'd like to see is a line painting down. I want to know what that might look like.
 
-            this.clearAll();
+            bool[,] _wrk = this.GridBits;
 
-            Point _p = Point.Empty; //Generation will be the row. 
-            for (int i = 0; i < PIXELS_PER_LINE; i++)
-            {
-                _p = new Point(this._generation, i);
-                this._gridPixels[_p].State = true;
-                _p = Point.Empty;
-            }
-            this._generation++;
-            if (this._generation > LINES_OF_PIXELS-1) this._generation = 0;
+            _wrk[this.tmp_val, this.tmp_val] = false;
+
+            this.tmp_val++;
+
+            if (this.tmp_val >= this.size) this.tmp_val = 0;
+
+            _wrk[this.tmp_val, this.tmp_val] = true; //Should walk it down every quarter second.
+            this.GridBits = _wrk;
+            _wrk = null;
         }
 
         public void startDrawing()
@@ -84,12 +107,29 @@ namespace Output.UserControls
             _t.Stop();
         }
 
+        private void UpdateGrid()
+        {
+            Point _p = Point.Empty; //Generation will be the row. 
+            for (int h = 0; h < this.size; h++) 
+            {
+                for (int v = 0; v < this.size; v++ )
+                {
+                    _p = new Point(h, v);
+                    this._gridPixels[_p].State = this._gridBits[h,v];
+                    _p = Point.Empty;
+                }
+            }
+        }
+
+        /// <summary>
+        /// This method is to just do the inital draw. This may not be needed anymore. 
+        /// Update grid may be able to take over.
+        /// </summary>
         private void initGrid()
         {
-            //Lets start with a 50x50 grid. 
             Pixel _px = null;
             FlowLayoutPanel _p = null;
-            for (int vertical_row = 0; vertical_row < LINES_OF_PIXELS; vertical_row++)
+            for (int vertical_row = 0; vertical_row < this.size; vertical_row++)
             {
                 //each row, establish a flow panel. 
                 _p = new FlowLayoutPanel();
@@ -98,10 +138,10 @@ namespace Output.UserControls
                 _p.Height = 12;
                 _p.Margin = new Padding(0);
 
-                for (int horizontal_row = 0; horizontal_row < PIXELS_PER_LINE; horizontal_row++)
+                for (int horizontal_row = 0; horizontal_row < this.size; horizontal_row++)
                 {
                     _px = new Pixel();
-                    _px.State = false; //Turn off. 
+                    _px.State = this._gridBits[vertical_row, horizontal_row];
 
                     _px.Address = new Point(vertical_row, horizontal_row);
 
