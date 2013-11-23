@@ -17,10 +17,6 @@ namespace Output
             InitializeComponent();
         }
 
-        private void pixel2_OnClick(object sender, EventArgs e)
-        {
-            pixel2.State = !pixel2.State;
-        }
 
     }
 }

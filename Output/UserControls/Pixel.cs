@@ -19,6 +19,7 @@ namespace Output.UserControls
 
         private bool _state;
 
+        private Point _address;
 
         public Pixel()
         {
@@ -26,6 +27,18 @@ namespace Output.UserControls
 
             StateChanged += Pixel_StateChanged;
             this.BackColor = Color.White;
+        }
+
+        public Point Address
+        {
+            get
+            {
+                return this._address;
+            }
+            set
+            {
+                this._address = value;
+            }
         }
 
         private void Pixel_StateChanged(object sender, EventArgs e)

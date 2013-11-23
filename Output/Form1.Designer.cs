@@ -28,36 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pixel1 = new Output.UserControls.Pixel();
-            this.pixel2 = new Output.UserControls.Pixel();
+            this.grid1 = new Output.UserControls.Grid();
             this.SuspendLayout();
             // 
-            // pixel1
+            // grid1
             // 
-            this.pixel1.BackColor = System.Drawing.Color.White;
-            this.pixel1.Location = new System.Drawing.Point(29, 80);
-            this.pixel1.Name = "pixel1";
-            this.pixel1.Size = new System.Drawing.Size(10, 10);
-            this.pixel1.State = false;
-            this.pixel1.TabIndex = 0;
-            // 
-            // pixel2
-            // 
-            this.pixel2.BackColor = System.Drawing.Color.White;
-            this.pixel2.Location = new System.Drawing.Point(46, 80);
-            this.pixel2.Name = "pixel2";
-            this.pixel2.Size = new System.Drawing.Size(10, 10);
-            this.pixel2.State = false;
-            this.pixel2.TabIndex = 1;
-            this.pixel2.Click += new System.EventHandler(this.pixel2_OnClick);
+            this.grid1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.grid1.Location = new System.Drawing.Point(12, 12);
+            this.grid1.Name = "grid1";
+            this.grid1.Size = new System.Drawing.Size(844, 411);
+            this.grid1.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.pixel2);
-            this.Controls.Add(this.pixel1);
+            this.ClientSize = new System.Drawing.Size(1039, 688);
+            this.Controls.Add(this.grid1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -66,8 +53,7 @@
 
         #endregion
 
-        private UserControls.Pixel pixel1;
-        private UserControls.Pixel pixel2;
+        private UserControls.Grid grid1;
     }
 }
 
