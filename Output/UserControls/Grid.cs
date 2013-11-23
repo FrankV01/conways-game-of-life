@@ -49,6 +49,14 @@ namespace Output.UserControls
             }
         }
 
+        //We need to refactor this; we want this to just represent
+        // a grid and then pass in a "IDrawer" (new interface concept) or
+        // perhaps call it a ICell (new interface concept). The cell can 
+        // mutate per the rule and is and the "Grid" can draw it. (Either
+        // through an adapter or some other reasonable means.
+        //  -> One thought is that the grid will contain multiple cells 
+        //     and each cell must be maintained and evolved. So perhaps it's better. 
+        //     to not package it as an ICell...
         void OnTick(object sender, EventArgs e)
         {
             //This is a long loop....
@@ -86,7 +94,6 @@ namespace Output.UserControls
                 //each row, establish a flow panel. 
                 _p = new FlowLayoutPanel();
                 _p.BackColor = Color.DarkGray;
-                //_p.Location = new Point(1*x, 0);
                 _p.Width = this.Width;
                 _p.Height = 12;
                 _p.Margin = new Padding(0);
@@ -100,7 +107,13 @@ namespace Output.UserControls
 
                     _px.MouseHover += delegate(object sender, EventArgs e)
                     {
-                        this.ParentForm.Text = "Pixel: " + (sender as Pixel).Address.ToString();
+                        StringBuilder _sb = new StringBuilder("Frank Villasesnor's Game of Life [");
+                        _sb.Append("Pixel: ");
+                        _sb.Append((sender as Pixel).Address.ToString());
+                        _sb.Append("]");
+
+                        this.ParentForm.Text = _sb.ToString();
+                        _sb = null;
                     };
 
                     _px.DoubleClick +=  delegate(object sender, EventArgs e)
