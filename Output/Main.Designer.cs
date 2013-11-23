@@ -1,6 +1,6 @@
 ﻿namespace Output
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.
@@ -30,8 +30,8 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnStart = new System.Windows.Forms.Button();
-            this.grid1 = new Output.UserControls.Grid();
             this.btnStop = new System.Windows.Forms.Button();
+            this.grid1 = new Output.UserControls.Grid();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,14 +56,6 @@
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.start_Click);
             // 
-            // grid1
-            // 
-            this.grid1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.grid1.Location = new System.Drawing.Point(12, 12);
-            this.grid1.Name = "grid1";
-            this.grid1.Size = new System.Drawing.Size(677, 518);
-            this.grid1.TabIndex = 2;
-            // 
             // btnStop
             // 
             this.btnStop.Location = new System.Drawing.Point(6, 48);
@@ -74,6 +66,14 @@
             this.btnStop.UseVisualStyleBackColor = true;
             this.btnStop.Click += new System.EventHandler(this.stop_Click);
             // 
+            // grid1
+            // 
+            this.grid1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.grid1.Location = new System.Drawing.Point(12, 12);
+            this.grid1.Name = "grid1";
+            this.grid1.Size = new System.Drawing.Size(677, 518);
+            this.grid1.TabIndex = 2;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -82,7 +82,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grid1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Frank Villasesnor\'s Game of Life";
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
