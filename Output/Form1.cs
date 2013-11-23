@@ -17,6 +17,16 @@ namespace Output
             InitializeComponent();
         }
 
+        private void start_Click(object sender, EventArgs e)
+        {
+            this.grid1.startDrawing();
+        }
+
+        private void stop_Click(object sender, EventArgs e)
+        {
+            this.grid1.stopDrawing();
+        }
+
 
     }
 }
