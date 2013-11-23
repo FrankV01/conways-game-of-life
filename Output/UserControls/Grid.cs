@@ -24,25 +24,35 @@ namespace Output.UserControls
         private void initGrid()
         {
             //Lets start with a 50x50 grid. 
-            Pixel _p = null;
+            Pixel _px = null;
             for( int x = 0; x < 36; x++ )
             {
-                for (int y = 0; y < 2; y++)
+                //each row, establish a flow panel. 
+                FlowLayoutPanel _p = new FlowLayoutPanel();
+                _p.BackColor = Color.DarkGray;
+                //_p.Location = new Point(1*x, 0);
+                _p.Width = this.Width;
+                _p.Height = 12;
+                _p.Margin = new Padding(0);
+                for (int y = 0; y < 50; y++)
                 {
-                    _p = new Pixel();
-                    _p.State = false; //Turn off. 
+                    _px = new Pixel();
+                    _px.State = false; //Turn off. 
 
-                    _p.Address = new Point(x, y);
+                    _px.Address = new Point(x, y);
 
-                    _p.DoubleClick +=  delegate(object sender, EventArgs e)
+                    _px.DoubleClick +=  delegate(object sender, EventArgs e)
                     {
                         MessageBox.Show((sender as Pixel).Address.ToString());
                     };
-                    this.flowLayoutPanel1.Controls.Add(_p);
-                    _gridPixels.Add(_p);
+
+                    _p.Controls.Add(_px);
+                    _gridPixels.Add(_px); //Not sure we need this.
                 }
+                 
+                this.flowLayoutPanel1.Controls.Add(_p);
             }
-            //this.flowLayoutPanel1.Controls.AddRange(_gridPixels.ToArray());
+            
         }
     }
 }

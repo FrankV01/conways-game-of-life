@@ -36,14 +36,14 @@
             this.grid1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.grid1.Location = new System.Drawing.Point(12, 12);
             this.grid1.Name = "grid1";
-            this.grid1.Size = new System.Drawing.Size(844, 411);
+            this.grid1.Size = new System.Drawing.Size(677, 518);
             this.grid1.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1039, 688);
+            this.ClientSize = new System.Drawing.Size(941, 547);
             this.Controls.Add(this.grid1);
             this.Name = "Form1";
             this.Text = "Form1";
