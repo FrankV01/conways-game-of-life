@@ -33,6 +33,7 @@ namespace FrankVillasenor.Life.Output
 
         private void OnLoad(object sender, EventArgs e)
         {
+            this.cbCellList.Items.Add(new ComboBoxEntry(0, "Simple Custom [Flipping Line]"));
             this.cbCellList.Items.Add(new ComboBoxEntry(1, "Glider"));
             this.cbCellList.Items.Add(new ComboBoxEntry(2, "Small Exploder"));
         }
@@ -45,6 +46,9 @@ namespace FrankVillasenor.Life.Output
 
             switch (entry.ID)
             {
+                case 0:
+                    _cell = new SimpleCustomCell(GRID_SIZE);
+                    break;
                 case 1:
                     _cell = new GliderCell(GRID_SIZE);
                     break;

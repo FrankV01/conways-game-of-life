@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Cells\GliderCell.cs" />
     <Compile Include="Cells\ICell.cs" />
+    <Compile Include="Cells\SimpleCustomCell.cs" />
     <Compile Include="Cells\SmallExploderCell.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
