@@ -1,4 +1,4 @@
-﻿namespace FrankVillasenor.Life.Output.UserControls
+﻿namespace FrankVillasenor.Life.UI.UserControls
 {
     partial class Pixel
     {

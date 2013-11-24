@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FrankVillasenor.Life.Output.Data
+namespace FrankVillasenor.Life.UI.Data
 {
     class ComboBoxEntry
     {

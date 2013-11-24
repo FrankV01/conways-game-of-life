@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FrankVillasenor.Life.Output.UserControls
+namespace FrankVillasenor.Life.UI.UserControls
 {
     /// <summary>
     /// Just represent the grid (which itself is

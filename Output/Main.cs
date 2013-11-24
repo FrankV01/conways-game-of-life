@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FrankVillasenor.Life.Output.Data;
+using FrankVillasenor.Life.UI.Data;
 using FrankVillasenor.Life.ProcessingEngine.Cells;
 using FrankVillasenor.Life.ProcessingEngine.Transitions;
 
-namespace FrankVillasenor.Life.Output
+namespace FrankVillasenor.Life.UI
 {
     public partial class Main : Form
     {
@@ -63,7 +63,7 @@ namespace FrankVillasenor.Life.Output
                     break;
 
                 case 2:
-                    _cell = new SmallExploderCell(GRID_SIZE);
+                    _cell = new SmallExploderCell(GRID_SIZE, 20);
                     break;
                 default:
                     break;

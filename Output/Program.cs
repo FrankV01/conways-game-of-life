@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FrankVillasenor.Life.Output
+namespace FrankVillasenor.Life.UI
 {
     static class Program
     {
