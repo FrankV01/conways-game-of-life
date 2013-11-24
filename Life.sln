@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "Output\UI.csproj", "{A9D06807-639A-4F31-9FCE-A12442E2C420}"
+	ProjectSection(ProjectDependencies) = postProject
+		{ED204609-F5DB-4D0A-BCE3-183078BF0253} = {ED204609-F5DB-4D0A-BCE3-183078BF0253}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessingEngine", "ProcessingEngine\ProcessingEngine.csproj", "{ED204609-F5DB-4D0A-BCE3-183078BF0253}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{A9D06807-639A-4F31-9FCE-A12442E2C420}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9D06807-639A-4F31-9FCE-A12442E2C420}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9D06807-639A-4F31-9FCE-A12442E2C420}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED204609-F5DB-4D0A-BCE3-183078BF0253}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED204609-F5DB-4D0A-BCE3-183078BF0253}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED204609-F5DB-4D0A-BCE3-183078BF0253}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED204609-F5DB-4D0A-BCE3-183078BF0253}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

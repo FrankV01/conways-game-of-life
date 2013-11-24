@@ -44,7 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cells\ICell.cs" />
     <Compile Include="Data\ComboBoxEntry.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -96,6 +95,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProcessingEngine\ProcessingEngine.csproj">
+      <Project>{ed204609-f5db-4d0a-bce3-183078bf0253}</Project>
+      <Name>ProcessingEngine</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

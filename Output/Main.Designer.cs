@@ -29,16 +29,17 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbCellList = new System.Windows.Forms.ComboBox();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.grid1 = new Output.UserControls.Grid();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cbCellList);
             this.groupBox1.Controls.Add(this.btnStop);
             this.groupBox1.Controls.Add(this.btnStart);
             this.groupBox1.Location = new System.Drawing.Point(696, 13);
@@ -48,14 +49,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // comboBox1
+            // cbCellList
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 19);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(221, 21);
-            this.comboBox1.TabIndex = 2;
+            this.cbCellList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCellList.FormattingEnabled = true;
+            this.cbCellList.Location = new System.Drawing.Point(6, 19);
+            this.cbCellList.Name = "cbCellList";
+            this.cbCellList.Size = new System.Drawing.Size(221, 21);
+            this.cbCellList.TabIndex = 2;
+            this.cbCellList.SelectedIndexChanged += new System.EventHandler(this.cbCellList_SelectedIndexChanged);
             // 
             // btnStop
             // 
@@ -76,6 +78,15 @@
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.start_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(6, 19);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(221, 21);
+            this.comboBox1.TabIndex = 2;
             // 
             // grid1
             // 
@@ -106,6 +117,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnStop;
+        private System.Windows.Forms.ComboBox cbCellList;
         private System.Windows.Forms.ComboBox comboBox1;
     }
 }
