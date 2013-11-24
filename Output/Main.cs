@@ -49,7 +49,6 @@ namespace FrankVillasenor.Life.UI
             this.cbCellList.Items.Add(new ComboBoxEntry(0, "Simple Custom [Flipping Line]"));
             this.cbCellList.Items.Add(new ComboBoxEntry(1, "Glider"));
             this.cbCellList.Items.Add(new ComboBoxEntry(2, "Small Exploder"));
-            
         }
 
         private void cbCellList_SelectedIndexChanged(object sender, EventArgs e)
