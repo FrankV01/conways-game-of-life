@@ -86,6 +86,91 @@ namespace FrankVillasenor.Life.ProcessingEngineUnitTests.TransitionTests
                     Assert.AreEqual(expected[i, j], result[i, j]);
         }
 
+        [TestMethod]
+        public void TestSubSelectAroundCell_0x0()
+        {
+            bool[,] startingPoint = {
+                                   {false,false,false},
+                                   {true,true,true},
+                                   {false,false,false}
+                               };
+            bool[,] expected = {
+                                   {false, false, false},
+                                   {false, false, false},
+                                   {false, true, true}
+                               };
+            CellTransitionImpl _t = new CellTransitionImpl();
+            bool[,] result = _t.subSelectAroundCell(0, 0, startingPoint);
+
+            for (int i = 0; i < 3; i++)
+                for (int j = 0; j < 3; j++)
+                    Assert.AreEqual(expected[i, j], result[i, j]);
+        }
+
+        [TestMethod]
+        public void TestSubSelectAroundCell_1x1()
+        {
+            bool[,] startingPoint = {
+                                   {false,false,false},
+                                   {true,true,true},
+                                   {false,false,false}
+                               };
+            bool[,] expected = {
+                                   {false,false,false},
+                                   {true,true,true},
+                                   {false,false,false}
+                               };
+            CellTransitionImpl _t = new CellTransitionImpl();
+            bool[,] result = _t.subSelectAroundCell(1, 1, startingPoint);
+
+            for (int i = 0; i < 3; i++)
+                for (int j = 0; j < 3; j++)
+                    Assert.AreEqual(expected[i, j], result[i, j]);
+        }
+
+        [TestMethod]
+        public void TestSubSelectAroundCell_2x2()
+        {
+            bool[,] startingPoint = {
+                                   {false,false,false},
+                                   {true,true,true},
+                                   {false,false,false}
+                               };
+            bool[,] expected = {
+                                   {true,true,false},
+                                   {false,false,false},
+                                   {false,false,false}
+                               };
+            CellTransitionImpl _t = new CellTransitionImpl();
+            bool[,] result = _t.subSelectAroundCell(2, 2, startingPoint);
+
+            for (int i = 0; i < 3; i++)
+                for (int j = 0; j < 3; j++)
+                    Assert.AreEqual(expected[i, j], result[i, j]);
+        }
+
+        [TestMethod]
+        public void TestSubSelectAroundCell_1x0()
+        {
+            bool[,] startingPoint = {
+                                   {false,false,false},
+                                   {true,true,true},
+                                   {false,false,false}
+                               };
+            bool[,] expected = {
+                                {false,false,false},   
+                                {false,true,true},
+                                {false,false,false}
+                               };
+            CellTransitionImpl _t = new CellTransitionImpl();
+            bool[,] result = _t.subSelectAroundCell(1, 0, startingPoint);
+
+            for (int i = 0; i < 3; i++)
+                for (int j = 0; j < 3; j++)
+                    Assert.AreEqual(expected[i, j], result[i, j]);
+        }
+
+
         //Many more tests are needed here. This Testclass is testing the majority of the "important" logic.
     }
 }

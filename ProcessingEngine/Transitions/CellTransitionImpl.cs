@@ -46,14 +46,7 @@ namespace FrankVillasenor.Life.ProcessingEngine.Transitions
             {
                 for( int y1 = 0; y1 < currentState.GetLongLength(1); y1++)
                 {
-                    if (x1 == 1 && y1 == 1)
-                    {
-                        System.Diagnostics.Debug.WriteLine("Check.");
-                    }
-
-                    //Still not working right.
                     bool[,] subSet = this.subSelectAroundCell(x1, y1, initState);
-
                     bool isAlive = initState[x1, y1];
 
                     if (isAlive)
@@ -63,6 +56,12 @@ namespace FrankVillasenor.Life.ProcessingEngine.Transitions
                     }
                     else
                     {
+                        //At 0,1 we should come alive. 
+                        if (x1 == 0 && y1 == 1)
+                            System.Diagnostics.Debug.WriteLine("Alive {0,1}");
+                        if (x1 == 2 && y1 == 1)
+                            System.Diagnostics.Debug.WriteLine("Alive {2, 1}");
+
                         buf = this.ExactlyThreeLiveNeighbours(subSet);
                         revisedState[x1, y1] = buf;
                     }
@@ -79,7 +78,7 @@ namespace FrankVillasenor.Life.ProcessingEngine.Transitions
 
             for (int x1 = 0; x1 < subSet.GetLongLength(0); x1++)
                 for (int y1 = 0; y1 < subSet.GetLongLength(1); y1++)
-                    if (x1 != 1 && y1 != 1) //Origin (the cell in question)
+                    if (!(x1 == 1 && y1 == 1)) //Origin (the cell in question)
                         if (subSet[x1, y1])
                             NumNeighbours++;
 
@@ -181,52 +180,42 @@ namespace FrankVillasenor.Life.ProcessingEngine.Transitions
 
         /// <summary>
         /// Given x,y sub-select elements around
+        /// 
+        /// Note: This is supposed to be private but it's such an important method 
+        /// that I exposed it to unit test on it's own.
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>
         /// <param name="grid"></param>
         /// <returns></returns>
-        private bool[,] subSelectAroundCell( int x, int y, bool[,] grid )
+        public bool[,] subSelectAroundCell( int x, int y, bool[,] grid )
         {
             bool[,] subset = new bool[3, 3];
 
-            //This logic isn't right because if we're looking for just 0,0 of a 3x3 grid ,we need to 
-            // "generate" the "off" grid cells and set them to false.
-            if (grid.GetLongLength(0) == 3 && grid.GetLongLength(1) == 3)
-                subset = grid.Clone() as bool[,];
-            else if(grid.GetLongLength(0) < 3 || grid.GetLongLength(1) < 3)
-                throw new InvalidOperationException("Grids less than 3x3 are not supported");
-            else
-            {
-                subset[0, 0] = grid[x - 1, y - 1];
-                subset[1, 0] = grid[x, y - 1];
-                subset[2, 0] = grid[x + 1, y - 1];
+            subset[0, 0] = GetVal(x - 1, y - 1, grid); // grid[x - 1, y - 1];
+            subset[1, 0] = GetVal(x, y - 1, grid); // grid[x, y - 1];
+            subset[2, 0] = GetVal(x + 1, y - 1, grid);  //grid[x + 1, y - 1];
 
-                subset[0, 1] = grid[x - 1, y];
-                subset[1, 1] = grid[x, y];
-                subset[2, 1] = grid[x + 1, y];
+            subset[0, 1] = GetVal(x - 1, y, grid); // grid[x - 1, y];
+            subset[1, 1] = GetVal(x, y, grid); // grid[x, y]; //this is fact. This is what we want.
+            subset[2, 1] = GetVal(x + 1, y, grid); // grid[x - 1, y];
 
-                subset[0, 2] = grid[x - 1, y + 1];
-                subset[1, 2] = grid[x, y + 1];
-                subset[2, 2] = grid[x + 1, y + 1];
-            }
-            //for(int x1 = -1; x1 < x; x1++)
-            //{
-            //    for(int y1 = -1; y1 < y; y1++)
-            //    {
-            //        try
-            //        {
-            //            subset[x1 + 1, y1 + 1] = grid[x + x1, y + y1];
-            //        }
-            //        catch (IndexOutOfRangeException ex)
-            //        {
-            //            //If we are out of range, then the node doesn't exist and we should assume false in those regions.
-            //            subset[x1 + 1, y1 + 1] = false;
-            //        }
-            //    }
-            //}
+            subset[0, 2] = GetVal(x - 1, y + 1, grid); // grid[x - 1, y + 1];
+            subset[1, 2] = GetVal(x, y + 1, grid); //grid[x, y + 1];
+            subset[2, 2] = GetVal(x + 1, y + 1, grid); //grid[x + 1, y + 1];
 
             return subset;
+        }
+
+        private bool GetVal( int x, int y, bool[,] grid )
+        {
+            if (x > grid.GetUpperBound(0) || x < grid.GetLowerBound(0))
+                return false;
+
+            if (y > grid.GetUpperBound(1) || y < grid.GetLowerBound(1))
+                return false;
+
+            return grid[x, y];
         }
 
     }
