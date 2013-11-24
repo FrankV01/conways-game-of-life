@@ -72,6 +72,9 @@ namespace FrankVillasenor.Life.UI
             this.cbCellList.Items.Add(new ComboBoxEntry(2, "Small Exploder"));
             this.cbCellList.Items.Add(new ComboBoxEntry(3, "Exploder"));
             this.cbCellList.Items.Add(new ComboBoxEntry(4, "Ten Cell Row"));
+
+            this.cbCellList.Items.Add(new ComboBoxEntry(5, "Tumbler"));
+            //this.cbCellList.Items.Add(new ComboBoxEntry(6, "Gosper Glider Gun"));
         }
 
         private void cbCellList_SelectedIndexChanged(object sender, EventArgs e)
@@ -99,6 +102,14 @@ namespace FrankVillasenor.Life.UI
 
                 case 4:
                     _cell = new TenCellRowCell(GRID_SIZE, 20);
+                    break;
+
+                case 5:
+                    _cell = new TumblerCell(GRID_SIZE, 20);
+                    break;
+
+                case 6:
+                    throw new NotImplementedException("not quite ready");
                     break;
                 default:
                     break;
