@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="CellTests\GliderTest.cs" />
     <Compile Include="CellTests\SimpleCustomCellTest.cs" />
+    <Compile Include="CellTests\SmallExploderCellTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
