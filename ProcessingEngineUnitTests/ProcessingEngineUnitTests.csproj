@@ -50,9 +50,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="CellTests\TenCellRowTest.cs" />
     <Compile Include="CellTests\GliderTest.cs" />
     <Compile Include="CellTests\SimpleCustomCellTest.cs" />
     <Compile Include="CellTests\SmallExploderCellTest.cs" />
+    <Compile Include="CellTests\ExploderCellTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TransitionTests\BasicTransitionTest.cs" />
   </ItemGroup>
