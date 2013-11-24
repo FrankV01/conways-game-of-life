@@ -9,16 +9,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FrankVillasenor.Life.Output.Data;
 using FrankVillasenor.Life.ProcessingEngine.Cells;
+using FrankVillasenor.Life.ProcessingEngine.Transitions;
 
 namespace FrankVillasenor.Life.Output
 {
     public partial class Main : Form
     {
         const int GRID_SIZE = 50;
+        CellTransitionImpl _cti;
 
         public Main()
         {
             InitializeComponent();
+
+            _cti = new CellTransitionImpl();
+            this.grid1.GenerationTimer.Tick += delegate(object s, EventArgs e1)
+            {
+                this.grid1.GridBits = _cti.ApplyTransition(this.grid1.GridBits);
+            };
         }
 
         private void start_Click(object sender, EventArgs e)
@@ -36,6 +44,7 @@ namespace FrankVillasenor.Life.Output
             this.cbCellList.Items.Add(new ComboBoxEntry(0, "Simple Custom [Flipping Line]"));
             this.cbCellList.Items.Add(new ComboBoxEntry(1, "Glider"));
             this.cbCellList.Items.Add(new ComboBoxEntry(2, "Small Exploder"));
+            
         }
 
         private void cbCellList_SelectedIndexChanged(object sender, EventArgs e)

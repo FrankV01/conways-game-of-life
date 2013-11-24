@@ -34,20 +34,35 @@ namespace FrankVillasenor.Life.ProcessingEngine.Transitions
         /// <returns></returns>
         public bool[,] ApplyTransition(bool[,] currentState)
         {
-            bool[,] initState = currentState;
-
-
-            //If I modify currentState does it affect initState
-            currentState[0, 0] = true;
-            if (currentState[0, 0] != initState[0, 0])
-            {
-                System.Diagnostics.Debug.WriteLine("Worked");
-            }
-            else
-            {
-                System.Diagnostics.Debug.WriteLine("Not expected");
-            }
+             bool[,] initState = currentState.Clone() as bool[,];
+            
+            //First step is to iterate through and identify if a cell is dies due to under population.
+            
+            
             return currentState;
         }
+
+        /// <summary>
+        /// Given x,y sub-select elements around
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="grid"></param>
+        /// <returns></returns>
+        private bool[,] subSelectAroundCell( int x, int y, bool[,] grid )
+        {
+            bool[,] subset = new bool[3, 3];
+
+            for(int x1 = -1; x1 < x+1; x1++)
+            {
+                for(int y1 = -1; y1 < y+1; y1++)
+                {
+                    subset[x1+1, y1+1] = grid[x1,y1];
+                }
+            }
+
+            return subset;
+        }
+
     }
 }

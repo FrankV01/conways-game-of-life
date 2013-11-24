@@ -22,7 +22,7 @@ namespace FrankVillasenor.Life.Output.UserControls
         IDictionary<Point, Pixel> _gridPixels;
         IDictionary<int, FlowLayoutPanel> _rows;
 
-        Timer _t;
+        private Timer _t;
 
         private bool[,] _gridBits;
         private int size;
@@ -47,8 +47,16 @@ namespace FrankVillasenor.Life.Output.UserControls
             this._generation = 0;
 
             _t = new Timer();
-            _t.Tick += OnTick;
+            //_t.Tick += OnTick;
             _t.Interval = 1000/4;
+        }
+
+        public Timer GenerationTimer
+        {
+            get
+            {
+                return this._t;
+            }
         }
 
         public bool[,] GridBits
@@ -84,6 +92,8 @@ namespace FrankVillasenor.Life.Output.UserControls
         {
             //This is a long loop....
             //What I'd like to see is a line painting down. I want to know what that might look like.
+
+
 
             bool[,] _wrk = this.GridBits;
 
