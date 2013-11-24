@@ -62,7 +62,7 @@ namespace FrankVillasenor.Life.ProcessingEngineUnitTests.TransitionTests
                     Assert.AreEqual(expected[i, j], result[i, j]);
         }
 
-        [TestMethod]
+        [TestMethod] //failing one.
         public void BasicTransitionTest_SingleCellLives()
         {
             bool[,] startingPoint = {
