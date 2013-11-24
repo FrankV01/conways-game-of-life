@@ -1,4 +1,24 @@
-﻿namespace FrankVillasenor.Life.UI
+﻿/**
+ * This file is part of "FrankVillasenor.Life"
+ * A "Conway's Game of Life" Implementation - http://en.wikipedia.org/wiki/Conway's_Game_of_Life
+ * Copyright (C) 2013  Frank Villasenor <frank.villasenor[at]gmail[dot]com>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *  
+ * You should have received a copy of the GNU General Public License
+ * along with this program as COPYING.txt.  If not, see
+ * <http://www.gnu.org/licenses/>.
+ **/
+
+namespace FrankVillasenor.Life.UI
 {
     partial class Main
     {
@@ -28,22 +48,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblCellTemplates = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblGenNum = new System.Windows.Forms.Label();
             this.lblGen = new System.Windows.Forms.Label();
             this.cbCellList = new System.Windows.Forms.ComboBox();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblCellTemplates = new System.Windows.Forms.Label();
             this.grid1 = new FrankVillasenor.Life.UI.UserControls.Grid();
+            this.txtLicense = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtLicense);
             this.groupBox1.Controls.Add(this.lblCellTemplates);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.cbCellList);
@@ -54,6 +77,25 @@
             this.groupBox1.Size = new System.Drawing.Size(233, 615);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
+            // 
+            // lblCellTemplates
+            // 
+            this.lblCellTemplates.AutoSize = true;
+            this.lblCellTemplates.Location = new System.Drawing.Point(3, 16);
+            this.lblCellTemplates.Name = "lblCellTemplates";
+            this.lblCellTemplates.Size = new System.Drawing.Size(76, 13);
+            this.lblCellTemplates.TabIndex = 6;
+            this.lblCellTemplates.Text = "Cell Templates";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.lblGenNum);
+            this.groupBox2.Controls.Add(this.lblGen);
+            this.groupBox2.Location = new System.Drawing.Point(6, 117);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(221, 144);
+            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabStop = false;
             // 
             // lblGenNum
             // 
@@ -114,25 +156,6 @@
             this.comboBox1.Size = new System.Drawing.Size(221, 21);
             this.comboBox1.TabIndex = 2;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.lblGenNum);
-            this.groupBox2.Controls.Add(this.lblGen);
-            this.groupBox2.Location = new System.Drawing.Point(6, 117);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(221, 144);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            // 
-            // lblCellTemplates
-            // 
-            this.lblCellTemplates.AutoSize = true;
-            this.lblCellTemplates.Location = new System.Drawing.Point(3, 16);
-            this.lblCellTemplates.Name = "lblCellTemplates";
-            this.lblCellTemplates.Size = new System.Drawing.Size(76, 13);
-            this.lblCellTemplates.TabIndex = 6;
-            this.lblCellTemplates.Text = "Cell Templates";
-            // 
             // grid1
             // 
             this.grid1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -140,6 +163,16 @@
             this.grid1.Name = "grid1";
             this.grid1.Size = new System.Drawing.Size(677, 616);
             this.grid1.TabIndex = 2;
+            // 
+            // txtLicense
+            // 
+            this.txtLicense.Location = new System.Drawing.Point(7, 471);
+            this.txtLicense.Multiline = true;
+            this.txtLicense.Name = "txtLicense";
+            this.txtLicense.ReadOnly = true;
+            this.txtLicense.Size = new System.Drawing.Size(220, 137);
+            this.txtLicense.TabIndex = 7;
+            this.txtLicense.Text = resources.GetString("txtLicense.Text");
             // 
             // Main
             // 
@@ -171,6 +204,7 @@
         private System.Windows.Forms.Label lblGen;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblCellTemplates;
+        private System.Windows.Forms.TextBox txtLicense;
     }
 }
 

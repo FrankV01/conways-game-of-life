@@ -117,4 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="txtLicense.Text" xml:space="preserve">
+    <value>"FrankVillasenor.Life" Copyright (C) 2013  Frank Villasenor 
+
+This program comes with ABSOLUTELY NO WARRANTY; see COPYING.txt
+
+This is free software, and you are welcome to redistribute it under certain conditions; see COPYING.txt</value>
+  </data>
 </root>
