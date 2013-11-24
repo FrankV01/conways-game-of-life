@@ -74,7 +74,7 @@ namespace FrankVillasenor.Life.UI
             this.cbCellList.Items.Add(new ComboBoxEntry(4, "Ten Cell Row"));
 
             this.cbCellList.Items.Add(new ComboBoxEntry(5, "Tumbler"));
-            //this.cbCellList.Items.Add(new ComboBoxEntry(6, "Gosper Glider Gun"));
+            this.cbCellList.Items.Add(new ComboBoxEntry(6, "Gosper Glider Gun"));
         }
 
         private void cbCellList_SelectedIndexChanged(object sender, EventArgs e)
@@ -109,8 +109,9 @@ namespace FrankVillasenor.Life.UI
                     break;
 
                 case 6:
-                    throw new NotImplementedException("not quite ready");
+                    _cell = new GosperGliderGunCell(GRID_SIZE, 5);
                     break;
+
                 default:
                     break;
             }

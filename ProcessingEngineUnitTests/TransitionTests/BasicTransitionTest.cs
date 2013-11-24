@@ -36,8 +36,6 @@ namespace FrankVillasenor.Life.ProcessingEngineUnitTests.TransitionTests
                                    {false,false,false}
                                };
 
-            int x = 3; int y = 3;
-
             ICellTransition _trans = new CellTransitionImpl();
             bool[,] result = _trans.ApplyTransition(startingPoint);
 
