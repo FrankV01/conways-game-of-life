@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Output.Data;
-using ProcessingEngine.Cells;
+using FrankVillasenor.Life.Output.Data;
+using FrankVillasenor.Life.ProcessingEngine.Cells;
 
-namespace Output
+namespace FrankVillasenor.Life.Output
 {
     public partial class Main : Form
     {
@@ -50,7 +50,7 @@ namespace Output
                     break;
 
                 case 2:
-                    MessageBox.Show("Not yet Implemented");
+                    _cell = new SmallExploderCell(GRID_SIZE);
                     break;
                 default:
                     break;

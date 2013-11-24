@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Output.UserControls
+namespace FrankVillasenor.Life.Output.UserControls
 {
     public partial class Pixel : UserControl
     {

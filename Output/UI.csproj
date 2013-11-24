@@ -7,7 +7,7 @@
     <ProjectGuid>{A9D06807-639A-4F31-9FCE-A12442E2C420}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Output</RootNamespace>
+    <RootNamespace>FrankVillasenor.Life.Output</RootNamespace>
     <AssemblyName>Output</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -76,6 +76,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UserControls\Grid.resx">
       <DependentUpon>Grid.cs</DependentUpon>

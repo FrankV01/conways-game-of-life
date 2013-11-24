@@ -1,4 +1,4 @@
-﻿namespace Output
+﻿namespace FrankVillasenor.Life.Output
 {
     partial class Main
     {
@@ -33,7 +33,7 @@
             this.btnStop = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.grid1 = new Output.UserControls.Grid();
+            this.grid1 = new FrankVillasenor.Life.Output.UserControls.Grid();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 

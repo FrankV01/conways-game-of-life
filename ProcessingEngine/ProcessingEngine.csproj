@@ -7,7 +7,7 @@
     <ProjectGuid>{ED204609-F5DB-4D0A-BCE3-183078BF0253}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProcessingEngine</RootNamespace>
+    <RootNamespace>FrankVillasenor.Life.ProcessingEngine</RootNamespace>
     <AssemblyName>ProcessingEngine</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Cells\GliderCell.cs" />
     <Compile Include="Cells\ICell.cs" />
+    <Compile Include="Cells\SmallExploderCell.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
