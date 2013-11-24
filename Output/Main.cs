@@ -34,11 +34,13 @@ namespace FrankVillasenor.Life.UI
 
         private void start_Click(object sender, EventArgs e)
         {
+            this.cbCellList.Enabled = false;
             this.grid1.startDrawing();
         }
 
         private void stop_Click(object sender, EventArgs e)
         {
+            this.cbCellList.Enabled = true;
             this.grid1.stopDrawing();
         }
 
@@ -71,7 +73,12 @@ namespace FrankVillasenor.Life.UI
                 default:
                     break;
             }
-            if( _cell != null ) this.grid1.GridBits = _cell.ToGrid();
+            if (_cell != null)
+            {
+                this.grid1.GridBits = _cell.ToGrid();
+                this.generation = 0;
+                this.lblGenNum.Text = generation.ToString();
+            }
         }
 
 
