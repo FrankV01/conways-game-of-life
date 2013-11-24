@@ -35,9 +35,9 @@
             this.btnStop = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.grid1 = new FrankVillasenor.Life.UI.UserControls.Grid();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblCellTemplates = new System.Windows.Forms.Label();
+            this.grid1 = new FrankVillasenor.Life.UI.UserControls.Grid();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -114,19 +114,11 @@
             this.comboBox1.Size = new System.Drawing.Size(221, 21);
             this.comboBox1.TabIndex = 2;
             // 
-            // grid1
-            // 
-            this.grid1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.grid1.Location = new System.Drawing.Point(12, 12);
-            this.grid1.Name = "grid1";
-            this.grid1.Size = new System.Drawing.Size(677, 616);
-            this.grid1.TabIndex = 2;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.lblGenNum);
             this.groupBox2.Controls.Add(this.lblGen);
-            this.groupBox2.Location = new System.Drawing.Point(6, 134);
+            this.groupBox2.Location = new System.Drawing.Point(6, 117);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(221, 144);
             this.groupBox2.TabIndex = 5;
@@ -140,6 +132,14 @@
             this.lblCellTemplates.Size = new System.Drawing.Size(76, 13);
             this.lblCellTemplates.TabIndex = 6;
             this.lblCellTemplates.Text = "Cell Templates";
+            // 
+            // grid1
+            // 
+            this.grid1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.grid1.Location = new System.Drawing.Point(12, 12);
+            this.grid1.Name = "grid1";
+            this.grid1.Size = new System.Drawing.Size(677, 616);
+            this.grid1.TabIndex = 2;
             // 
             // Main
             // 

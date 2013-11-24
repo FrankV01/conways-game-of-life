@@ -31,7 +31,6 @@ namespace FrankVillasenor.Life.ProcessingEngine.Transitions
         /// We can also unit test this...
         /// 
         /// NOTE: We only turn off the cell in question. -- Not surrounding ones.
-        /// NOTE: Anything in a corner can die. It won't come alive. (Ignore for now, not exactly right)
         /// </summary>
         /// <param name="currentState"></param>
         /// <returns></returns>
