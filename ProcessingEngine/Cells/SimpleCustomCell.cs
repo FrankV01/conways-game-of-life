@@ -35,9 +35,9 @@ namespace FrankVillasenor.Life.ProcessingEngine.Cells
                 }
             }
 
-            grid[this._startingPoint + 0, this._startingPoint + 0] = true;
-            grid[this._startingPoint + 0, this._startingPoint + 1] = true;
-            grid[this._startingPoint + 0, this._startingPoint + 2] = true;
+            grid[this._startingPoint + 1, this._startingPoint + 0] = true;
+            grid[this._startingPoint + 1, this._startingPoint + 1] = true;
+            grid[this._startingPoint + 1, this._startingPoint + 2] = true;
             
 
             return grid;

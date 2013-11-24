@@ -5,36 +5,34 @@ using FrankVillasenor.Life.ProcessingEngine.Cells;
 namespace FrankVillasenor.Life.ProcessingEngineUnitTests.CellTests
 {
     [TestClass]
-    public class GliderTest
+    public class SimpleCustomCellTest
     {
         [TestMethod]
-        public void GliderTest_correctSizeReturned()
+        public void SimpleCustomCellTest_correctSizeReturned()
         {
-            bool[,] _result = new GliderCell(25).ToGrid();
+            bool[,] _result = new SimpleCustomCell(25).ToGrid();
             Assert.AreEqual(_result.GetLongLength(0), 25);
             Assert.AreEqual(_result.GetLongLength(1), 25);
 
             //Odd (unusual) size
-            _result = new GliderCell(37).ToGrid();
+            _result = new SimpleCustomCell(37).ToGrid();
             Assert.AreEqual(_result.GetLongLength(0), 37);
             Assert.AreEqual(_result.GetLongLength(1), 37);
 
-            _result = new GliderCell(50).ToGrid();
+            _result = new SimpleCustomCell(50).ToGrid();
             Assert.AreEqual(_result.GetLongLength(0), 50);
             Assert.AreEqual(_result.GetLongLength(1), 50);
         }
 
         [TestMethod]
-        public void GliderTest_correctShape()
+        public void SimpleCustomCellTest_correctShape()
         {
             bool[,] expected = {
-                                   {false,true,false},
-                                   {false,false,true},
-                                   {true,true,true}
+                                   {false,false,false},
+                                   {true,true,true},
+                                   {false,false,false}
                                };
-            bool[,] testGrid = new GliderCell(3, 0).ToGrid();
-
-            //Assert.AreEqual(expected, testGrid); //fails but probably because the objects are not the same reference (as opposed to contents).
+            bool[,] testGrid = new SimpleCustomCell(3, 0).ToGrid();
 
             for (int i = 0; i < 3; i++)
                 for (int j = 0; j < 3; j++)

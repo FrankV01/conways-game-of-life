@@ -51,7 +51,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CellTests\GliderTest.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="CellTests\SimpleCustomCellTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
