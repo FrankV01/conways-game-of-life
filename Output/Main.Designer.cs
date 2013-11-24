@@ -34,11 +34,15 @@
             this.btnStart = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.grid1 = new FrankVillasenor.Life.UI.UserControls.Grid();
+            this.lblGen = new System.Windows.Forms.Label();
+            this.lblGenNum = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblGenNum);
+            this.groupBox1.Controls.Add(this.lblGen);
             this.groupBox1.Controls.Add(this.cbCellList);
             this.groupBox1.Controls.Add(this.btnStop);
             this.groupBox1.Controls.Add(this.btnStart);
@@ -96,6 +100,26 @@
             this.grid1.Size = new System.Drawing.Size(677, 616);
             this.grid1.TabIndex = 2;
             // 
+            // lblGen
+            // 
+            this.lblGen.AutoSize = true;
+            this.lblGen.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGen.Location = new System.Drawing.Point(30, 145);
+            this.lblGen.Name = "lblGen";
+            this.lblGen.Size = new System.Drawing.Size(175, 37);
+            this.lblGen.TabIndex = 3;
+            this.lblGen.Text = "Generation";
+            // 
+            // lblGenNum
+            // 
+            this.lblGenNum.AutoSize = true;
+            this.lblGenNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGenNum.Location = new System.Drawing.Point(89, 182);
+            this.lblGenNum.Name = "lblGenNum";
+            this.lblGenNum.Size = new System.Drawing.Size(51, 55);
+            this.lblGenNum.TabIndex = 4;
+            this.lblGenNum.Text = "0";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -107,6 +131,7 @@
             this.Text = "Frank Villasesnor\'s Game of Life";
             this.Load += new System.EventHandler(this.OnLoad);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -119,6 +144,8 @@
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.ComboBox cbCellList;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lblGenNum;
+        private System.Windows.Forms.Label lblGen;
     }
 }
 

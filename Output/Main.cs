@@ -18,6 +18,8 @@ namespace FrankVillasenor.Life.UI
         const int GRID_SIZE = 50;
         CellTransitionImpl _cti;
 
+        int generation = 0;
+
         public Main()
         {
             InitializeComponent();
@@ -26,6 +28,7 @@ namespace FrankVillasenor.Life.UI
             this.grid1.GenerationTimer.Tick += delegate(object s, EventArgs e1)
             {
                 this.grid1.GridBits = _cti.ApplyTransition(this.grid1.GridBits);
+                this.lblGenNum.Text = (generation++).ToString();
             };
         }
 
