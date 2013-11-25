@@ -75,12 +75,6 @@ namespace FrankVillasenor.Life.ProcessingEngine.Transitions
                     }
                     else
                     {
-                        //At 0,1 we should come alive. 
-                        if (x1 == 0 && y1 == 1)
-                            System.Diagnostics.Debug.WriteLine("Alive {0,1}");
-                        if (x1 == 2 && y1 == 1)
-                            System.Diagnostics.Debug.WriteLine("Alive {2, 1}");
-
                         buf = this.ExactlyThreeLiveNeighbours(subSet);
                         revisedState[x1, y1] = buf;
                     }
@@ -123,11 +117,6 @@ namespace FrankVillasenor.Life.ProcessingEngine.Transitions
                         if (subSet[x1, y1])
                             NumNeighbours++;
                     }
-                    else
-                    {
-                        System.Diagnostics.Debug.WriteLine("X1 = " + x1.ToString() + "; y1 = " + y1.ToString());
-                    }
-
                 }
 
             if (NumNeighbours == 2 || NumNeighbours == 3)
