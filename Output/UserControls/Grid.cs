@@ -47,8 +47,6 @@ namespace FrankVillasenor.Life.UI.UserControls
         private bool[,] _gridBits;
         private int size;
 
-        private int tmp_val = 0;
-
         public Grid() //We need a default constructor.
         {
             InitializeComponent();
@@ -67,7 +65,6 @@ namespace FrankVillasenor.Life.UI.UserControls
             this._generation = 0;
 
             _t = new Timer();
-            //_t.Tick += OnTick;
             _t.Interval = 1000/4;
         }
 
@@ -99,36 +96,6 @@ namespace FrankVillasenor.Life.UI.UserControls
                 itm.Value.State = false;
             }
         }
-
-        /*
-        //We need to refactor this; we want this to just represent
-        // a grid and then pass in a "IDrawer" (new interface concept) or
-        // perhaps call it a ICell (new interface concept). The cell can 
-        // mutate per the rule and is and the "Grid" can draw it. (Either
-        // through an adapter or some other reasonable means.
-        //  -> One thought is that the grid will contain multiple cells 
-        //     and each cell must be maintained and evolved. So perhaps it's better. 
-        //     to not package it as an ICell...
-        void OnTick(object sender, EventArgs e)
-        {
-            //This is a long loop....
-            //What I'd like to see is a line painting down. I want to know what that might look like.
-
-
-
-            bool[,] _wrk = this.GridBits;
-
-            _wrk[this.tmp_val, this.tmp_val] = false;
-
-            this.tmp_val++;
-
-            if (this.tmp_val >= this.size) this.tmp_val = 0;
-
-            _wrk[this.tmp_val, this.tmp_val] = true; //Should walk it down every quarter second.
-            this.GridBits = _wrk;
-            _wrk = null;
-        }
-         */
 
         public void startDrawing()
         {
@@ -190,7 +157,9 @@ namespace FrankVillasenor.Life.UI.UserControls
 
                     _px.DoubleClick +=  delegate(object sender, EventArgs e)
                     {
+#if DEBUG
                         MessageBox.Show((sender as Pixel).Address.ToString());
+#endif
                     };
 
                     _px.Click += delegate(object sender, EventArgs e)

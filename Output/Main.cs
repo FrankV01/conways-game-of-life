@@ -33,6 +33,11 @@ using FrankVillasenor.Life.ProcessingEngine.Transitions;
 
 namespace FrankVillasenor.Life.UI
 {
+    /// <summary>
+    /// Main UI Element. 
+    /// 
+    /// If reviewing or learning about this program, start here.
+    /// </summary>
     public partial class Main : Form
     {
         const int GRID_SIZE = 50;
@@ -45,6 +50,9 @@ namespace FrankVillasenor.Life.UI
             InitializeComponent();
 
             _cti = new CellTransitionImpl();
+
+            //The following progresses the generations and mutates the cells over time.
+            // This is an event handler which is attached to the OnTick event of a Timer.
             this.grid1.GenerationTimer.Tick += delegate(object s, EventArgs e1)
             {
                 this.grid1.GridBits = _cti.ApplyTransition(this.grid1.GridBits);

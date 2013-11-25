@@ -24,6 +24,9 @@ using FrankVillasenor.Life.ProcessingEngine.Transitions;
 
 namespace FrankVillasenor.Life.ProcessingEngineUnitTests.TransitionTests
 {
+    /// <summary>
+    /// This Testclass tests the algorithm to apply the transitions.
+    /// </summary>
     [TestClass]
     public class BasicTransitionTest
     {
@@ -49,7 +52,7 @@ namespace FrankVillasenor.Life.ProcessingEngineUnitTests.TransitionTests
                 startingPoint.GetLongLength(2); //Should throw exception because we are not expected a new dim.
                 Assert.Fail("Unexpected LongLength");
             }
-            catch (Exception ex) 
+            catch (Exception) 
             { 
                 //Passes test.
             }
@@ -80,7 +83,7 @@ namespace FrankVillasenor.Life.ProcessingEngineUnitTests.TransitionTests
                     Assert.AreEqual(expected[i, j], result[i, j]);
         }
 
-        [TestMethod] //failing one.
+        [TestMethod]
         public void BasicTransitionTest_SingleCellLives()
         {
             bool[,] startingPoint = {
@@ -188,7 +191,6 @@ namespace FrankVillasenor.Life.ProcessingEngineUnitTests.TransitionTests
                     Assert.AreEqual(expected[i, j], result[i, j]);
         }
 
-
-        //Many more tests are needed here. This Testclass is testing the majority of the "important" logic.
+        //Additional tests are perferred.
     }
 }

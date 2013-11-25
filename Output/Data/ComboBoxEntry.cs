@@ -26,9 +26,11 @@ using System.Threading.Tasks;
 
 namespace FrankVillasenor.Life.UI.Data
 {
+    /// <summary>
+    /// A utility class to make Combo Box Items consistant.
+    /// </summary>
     class ComboBoxEntry
     {
-
         public ComboBoxEntry(int id, string text)
         {
             this.ID = id;

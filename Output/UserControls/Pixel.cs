@@ -30,6 +30,10 @@ using System.Windows.Forms;
 
 namespace FrankVillasenor.Life.UI.UserControls
 {
+    /// <summary>
+    /// Represents a pixel in a grid. A pixel 
+    /// is the UI component for a Cell.
+    /// </summary>
     public partial class Pixel : UserControl
     {
         /// <summary>
@@ -75,6 +79,10 @@ namespace FrankVillasenor.Life.UI.UserControls
 
         #region [ Properties ]
 
+        /// <summary>
+        /// Accessor to the State of the pixcel; changing this
+        /// triggers the StateChanged event handler.
+        /// </summary>
         public bool State
         {
             get

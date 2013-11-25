@@ -26,6 +26,9 @@ using System.Threading.Tasks;
 
 namespace FrankVillasenor.Life.ProcessingEngine.Cells
 {
+    /// <summary>
+    /// Produces a grid with all cells False.
+    /// </summary>
     public class AllDeadCell : ICell
     {
         private int _size;

@@ -29,7 +29,9 @@ namespace FrankVillasenor.Life.ProcessingEngine.Transitions
     /// <summary>
     /// Interface to define a CellTransition class. 
     /// Classes that implement this interface transition a
-    /// a grid (the whole thing??) to it's new state. 
+    /// a grid cells to it's new state. 
+    /// 
+    /// One transition per call for each cell
     /// </summary>
     public interface ICellTransition
     {

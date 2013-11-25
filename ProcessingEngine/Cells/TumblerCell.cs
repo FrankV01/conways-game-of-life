@@ -26,6 +26,10 @@ using System.Threading.Tasks;
 
 namespace FrankVillasenor.Life.ProcessingEngine.Cells
 {
+    /// <summary>
+    /// Produces Cells that tumble. 
+    /// (Source: http://www.bitstorm.org/gameoflife/)
+    /// </summary>
     public class TumblerCell : ICell
     {
         private int _size;

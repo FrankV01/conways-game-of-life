@@ -26,6 +26,10 @@ using System.Threading.Tasks;
 
 namespace FrankVillasenor.Life.ProcessingEngine.Cells
 {
+    /// <summary>
+    /// Produces Ten Adjacent Cells in the grid. 
+    /// (Source: http://www.bitstorm.org/gameoflife/)
+    /// </summary>
     public class TenCellRowCell : ICell
     {
         private int _size;

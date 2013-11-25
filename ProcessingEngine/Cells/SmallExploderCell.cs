@@ -26,6 +26,10 @@ using System.Threading.Tasks;
 
 namespace FrankVillasenor.Life.ProcessingEngine.Cells
 {
+    /// <summary>
+    /// Produces a small exploder cell as done at
+    /// http://www.bitstorm.org/gameoflife/
+    /// </summary>
     public class SmallExploderCell : ICell
     {
         private int _size;

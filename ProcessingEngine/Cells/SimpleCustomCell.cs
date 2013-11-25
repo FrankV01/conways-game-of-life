@@ -26,6 +26,10 @@ using System.Threading.Tasks;
 
 namespace FrankVillasenor.Life.ProcessingEngine.Cells
 {
+    /// <summary>
+    /// Renders a simple cell that is a "Blinker" as described at
+    /// http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life#Examples_of_patterns
+    /// </summary>
     public class SimpleCustomCell : ICell
     {
         private int _size;

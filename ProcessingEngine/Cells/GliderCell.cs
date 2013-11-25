@@ -26,6 +26,9 @@ using System.Threading.Tasks;
 
 namespace FrankVillasenor.Life.ProcessingEngine.Cells
 {
+    /// <summary>
+    /// Produces a glider cell as provided at http://www.bitstorm.org/gameoflife/
+    /// </summary>
     public class GliderCell : ICell
     {
         private int _size;

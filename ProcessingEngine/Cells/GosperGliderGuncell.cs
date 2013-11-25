@@ -27,6 +27,10 @@ using System.Drawing;
 
 namespace FrankVillasenor.Life.ProcessingEngine.Cells
 {
+    /// <summary>
+    /// Produces a GosperGliderGun cell-set. (Multiple cells, really). 
+    /// Derived from the figure rendered at http://www.bitstorm.org/gameoflife/
+    /// </summary>
     public class GosperGliderGunCell : ICell
     {
         private int _size;
