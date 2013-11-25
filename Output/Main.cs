@@ -109,7 +109,7 @@ namespace FrankVillasenor.Life.UI
                     break;
 
                 case 6:
-                    _cell = new GosperGliderGunCell(GRID_SIZE, 5);
+                    _cell = new GosperGliderGunCell(GRID_SIZE, 7);
                     break;
 
                 default:

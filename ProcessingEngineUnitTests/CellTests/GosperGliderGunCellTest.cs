@@ -56,21 +56,16 @@ namespace FrankVillasenor.Life.ProcessingEngineUnitTests.CellTests
         [TestMethod]
         public void GosperGliderGunCellTes_correctShape()
         {
-            bool[,] expected = {
-                {false,true,true,false,true,true,false},
-                {false,true,true,false,true,true,false},
-                {false,false,true,false,true,false,false},
-                {true,false,true,false,true,false,true},
-                {true,false,true,false,true,false,true},
-                {true,true,false,false,false,true,true},
-                {false,false,false,false,false,false,false},
-            };
+            //Checking the full shape is not pratical nor maintainable. We'll spot check... 
 
-            bool[,] testGrid = new GosperGliderGunCell(37, 0).ToGrid();
+            bool[,] testGrid = new GosperGliderGunCell(41, 0).ToGrid();
 
-            for (int i = 0; i < 3; i++)
-                for (int j = 0; j < 3; j++)
-                    Assert.AreEqual(expected[i, j], testGrid[i, j]);
+            Assert.IsTrue(testGrid[2,0]);
+            Assert.IsTrue(testGrid[0, 34]);
+
+            Assert.IsTrue(testGrid[12, 26]);
+            Assert.IsTrue(testGrid[1, 35]);
+            Assert.IsTrue(testGrid[2, 23]);
         }
 
     }
