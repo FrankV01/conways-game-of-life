@@ -100,6 +100,7 @@ namespace FrankVillasenor.Life.UI.UserControls
             }
         }
 
+        /*
         //We need to refactor this; we want this to just represent
         // a grid and then pass in a "IDrawer" (new interface concept) or
         // perhaps call it a ICell (new interface concept). The cell can 
@@ -127,6 +128,7 @@ namespace FrankVillasenor.Life.UI.UserControls
             this.GridBits = _wrk;
             _wrk = null;
         }
+         */
 
         public void startDrawing()
         {
@@ -191,6 +193,15 @@ namespace FrankVillasenor.Life.UI.UserControls
                         MessageBox.Show((sender as Pixel).Address.ToString());
                     };
 
+                    _px.Click += delegate(object sender, EventArgs e)
+                    {
+                        Pixel p = (sender as Pixel);
+                        if (p != null)
+                        {
+                            this.GridBits[p.Address.X, p.Address.Y] = !this.GridBits[p.Address.X, p.Address.Y];
+                            this.UpdateGrid();
+                        }
+                    };
                     _p.Controls.Add(_px);
                     this._gridPixels.Add(_px.Address, _px);
                     _px = null;

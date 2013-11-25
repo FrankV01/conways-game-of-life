@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FrankVillasenor.Life.ProcessingEngine</RootNamespace>
-    <AssemblyName>ProcessingEngine</AssemblyName>
+    <AssemblyName>FrankVillasenor.Life.ProcessingEngine</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cells\AllDeadCell.cs" />
     <Compile Include="Cells\GosperGliderGunCell.cs" />
     <Compile Include="Cells\TumblerCell.cs" />
     <Compile Include="Cells\TenCellRowCell.cs" />

@@ -67,6 +67,11 @@ namespace FrankVillasenor.Life.UI
         private void OnLoad(object sender, EventArgs e)
         {
             // Credit: These "starting" cells are borrowed from http://www.bitstorm.org/gameoflife/
+
+            object dflt = new ComboBoxEntry(-1, "Reset [Empty]");
+            this.cbCellList.Items.Add(dflt);
+            this.cbCellList.SelectedItem = dflt;
+            
             this.cbCellList.Items.Add(new ComboBoxEntry(0, "Simple Custom [Flipping Line]"));
             this.cbCellList.Items.Add(new ComboBoxEntry(1, "Glider"));
             this.cbCellList.Items.Add(new ComboBoxEntry(2, "Small Exploder"));
@@ -85,6 +90,10 @@ namespace FrankVillasenor.Life.UI
 
             switch (entry.ID)
             {
+                case -1:
+                    _cell = new AllDeadCell(GRID_SIZE);
+                    break;
+
                 case 0:
                     _cell = new SimpleCustomCell(GRID_SIZE);
                     break;
