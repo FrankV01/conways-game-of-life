@@ -50,6 +50,7 @@ namespace FrankVillasenor.Life.UI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtLicense = new System.Windows.Forms.TextBox();
             this.lblCellTemplates = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblGenNum = new System.Windows.Forms.Label();
@@ -58,14 +59,15 @@ namespace FrankVillasenor.Life.UI
             this.btnStop = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.grid1 = new FrankVillasenor.Life.UI.UserControls.Grid();
-            this.txtLicense = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtLicense);
             this.groupBox1.Controls.Add(this.lblCellTemplates);
             this.groupBox1.Controls.Add(this.groupBox2);
@@ -77,6 +79,16 @@ namespace FrankVillasenor.Life.UI
             this.groupBox1.Size = new System.Drawing.Size(233, 615);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
+            // 
+            // txtLicense
+            // 
+            this.txtLicense.Location = new System.Drawing.Point(7, 471);
+            this.txtLicense.Multiline = true;
+            this.txtLicense.Name = "txtLicense";
+            this.txtLicense.ReadOnly = true;
+            this.txtLicense.Size = new System.Drawing.Size(220, 137);
+            this.txtLicense.TabIndex = 7;
+            this.txtLicense.Text = resources.GetString("txtLicense.Text");
             // 
             // lblCellTemplates
             // 
@@ -91,7 +103,7 @@ namespace FrankVillasenor.Life.UI
             // 
             this.groupBox2.Controls.Add(this.lblGenNum);
             this.groupBox2.Controls.Add(this.lblGen);
-            this.groupBox2.Location = new System.Drawing.Point(6, 117);
+            this.groupBox2.Location = new System.Drawing.Point(7, 144);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(221, 144);
             this.groupBox2.TabIndex = 5;
@@ -156,6 +168,15 @@ namespace FrankVillasenor.Life.UI
             this.comboBox1.Size = new System.Drawing.Size(221, 21);
             this.comboBox1.TabIndex = 2;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 125);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(151, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Tip: Cells toggle when clicked.";
+            // 
             // grid1
             // 
             this.grid1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -164,16 +185,6 @@ namespace FrankVillasenor.Life.UI
             this.grid1.Size = new System.Drawing.Size(677, 616);
             this.grid1.TabIndex = 2;
             // 
-            // txtLicense
-            // 
-            this.txtLicense.Location = new System.Drawing.Point(7, 471);
-            this.txtLicense.Multiline = true;
-            this.txtLicense.Name = "txtLicense";
-            this.txtLicense.ReadOnly = true;
-            this.txtLicense.Size = new System.Drawing.Size(220, 137);
-            this.txtLicense.TabIndex = 7;
-            this.txtLicense.Text = resources.GetString("txtLicense.Text");
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,6 +192,7 @@ namespace FrankVillasenor.Life.UI
             this.ClientSize = new System.Drawing.Size(941, 633);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grid1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Main";
             this.Text = "Frank Villasesnor\'s Game of Life";
             this.Load += new System.EventHandler(this.OnLoad);
@@ -205,6 +217,7 @@ namespace FrankVillasenor.Life.UI
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblCellTemplates;
         private System.Windows.Forms.TextBox txtLicense;
+        private System.Windows.Forms.Label label1;
     }
 }
 
