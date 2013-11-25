@@ -50,6 +50,7 @@ namespace FrankVillasenor.Life.UI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtLicense = new System.Windows.Forms.TextBox();
             this.lblCellTemplates = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -59,7 +60,6 @@ namespace FrankVillasenor.Life.UI
             this.btnStop = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.grid1 = new FrankVillasenor.Life.UI.UserControls.Grid();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -79,6 +79,15 @@ namespace FrankVillasenor.Life.UI
             this.groupBox1.Size = new System.Drawing.Size(233, 615);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 125);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(151, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Tip: Cells toggle when clicked.";
             // 
             // txtLicense
             // 
@@ -168,15 +177,6 @@ namespace FrankVillasenor.Life.UI
             this.comboBox1.Size = new System.Drawing.Size(221, 21);
             this.comboBox1.TabIndex = 2;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 125);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Tip: Cells toggle when clicked.";
-            // 
             // grid1
             // 
             this.grid1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -194,7 +194,7 @@ namespace FrankVillasenor.Life.UI
             this.Controls.Add(this.grid1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Main";
-            this.Text = "Frank Villasesnor\'s Game of Life";
+            this.Text = "Game of Life";
             this.Load += new System.EventHandler(this.OnLoad);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

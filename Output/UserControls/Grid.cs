@@ -146,7 +146,7 @@ namespace FrankVillasenor.Life.UI.UserControls
 
                     _px.MouseHover += delegate(object sender, EventArgs e)
                     {
-                        StringBuilder _sb = new StringBuilder("Frank Villasesnor's Game of Life [");
+                        StringBuilder _sb = new StringBuilder("Game of Life [");
                         _sb.Append("Pixel: ");
                         _sb.Append((sender as Pixel).Address.ToString());
                         _sb.Append("]");
