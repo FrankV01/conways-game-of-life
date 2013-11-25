@@ -88,6 +88,8 @@ namespace FrankVillasenor.Life.UI
 
             this.cbCellList.Items.Add(new ComboBoxEntry(5, "Tumbler"));
             this.cbCellList.Items.Add(new ComboBoxEntry(6, "Gosper Glider Gun"));
+
+            this.cbCellList.Items.Add(new ComboBoxEntry(7, "Random [Expiremental]"));
         }
 
         private void cbCellList_SelectedIndexChanged(object sender, EventArgs e)
@@ -129,6 +131,9 @@ namespace FrankVillasenor.Life.UI
                     _cell = new GosperGliderGunCell(GRID_SIZE, 7);
                     break;
 
+                case 7:
+                    _cell = new RandomCell(GRID_SIZE);
+                    break;
                 default:
                     break;
             }

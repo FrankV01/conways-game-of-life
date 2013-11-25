@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cells\RandomCell.cs" />
     <Compile Include="Cells\AllDeadCell.cs" />
     <Compile Include="Cells\GosperGliderGunCell.cs" />
     <Compile Include="Cells\TumblerCell.cs" />
