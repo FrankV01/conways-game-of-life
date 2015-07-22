@@ -61,8 +61,10 @@ namespace FrankVillasenor.Life.UI
             this.btnStart = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.grid1 = new FrankVillasenor.Life.UI.UserControls.Grid();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -74,6 +76,7 @@ namespace FrankVillasenor.Life.UI
             this.groupBox1.Controls.Add(this.cbCellList);
             this.groupBox1.Controls.Add(this.btnStop);
             this.groupBox1.Controls.Add(this.btnStart);
+            this.groupBox1.Controls.Add(this.trackBar1);
             this.groupBox1.Location = new System.Drawing.Point(696, 13);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(233, 615);
@@ -83,7 +86,7 @@ namespace FrankVillasenor.Life.UI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 125);
+            this.label1.Location = new System.Drawing.Point(7, 169);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(151, 13);
             this.label1.TabIndex = 8;
@@ -112,7 +115,7 @@ namespace FrankVillasenor.Life.UI
             // 
             this.groupBox2.Controls.Add(this.lblGenNum);
             this.groupBox2.Controls.Add(this.lblGen);
-            this.groupBox2.Location = new System.Drawing.Point(7, 144);
+            this.groupBox2.Location = new System.Drawing.Point(7, 188);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(221, 144);
             this.groupBox2.TabIndex = 5;
@@ -185,6 +188,13 @@ namespace FrankVillasenor.Life.UI
             this.grid1.Size = new System.Drawing.Size(677, 616);
             this.grid1.TabIndex = 2;
             // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(10, 118);
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(212, 45);
+            this.trackBar1.TabIndex = 9;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -200,6 +210,7 @@ namespace FrankVillasenor.Life.UI
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -218,6 +229,7 @@ namespace FrankVillasenor.Life.UI
         private System.Windows.Forms.Label lblCellTemplates;
         private System.Windows.Forms.TextBox txtLicense;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TrackBar trackBar1;
     }
 }
 
