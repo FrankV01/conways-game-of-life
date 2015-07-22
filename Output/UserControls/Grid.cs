@@ -146,21 +146,17 @@ namespace FrankVillasenor.Life.UI.UserControls
 
                     _px.MouseHover += delegate(object sender, EventArgs e)
                     {
-                        StringBuilder _sb = new StringBuilder("Game of Life [");
-                        _sb.Append("Pixel: ");
-                        _sb.Append((sender as Pixel).Address.ToString());
-                        _sb.Append("]");
-
-                        this.ParentForm.Text = _sb.ToString();
-                        _sb = null;
+                        if(this.ParentForm == null) return;
+                        this.ParentForm.Text = string.Format("Game of Life [Pixel: {0}]", (sender as Pixel).Address.ToString());
                     };
-
+#if DEBUG
                     _px.DoubleClick +=  delegate(object sender, EventArgs e)
                     {
-#if DEBUG
+
                         MessageBox.Show((sender as Pixel).Address.ToString());
-#endif
+
                     };
+#endif
 
                     _px.Click += delegate(object sender, EventArgs e)
                     {

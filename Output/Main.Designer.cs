@@ -120,13 +120,13 @@ namespace FrankVillasenor.Life.UI
             // 
             // lblGenNum
             // 
-            this.lblGenNum.AutoSize = true;
             this.lblGenNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenNum.Location = new System.Drawing.Point(85, 63);
+            this.lblGenNum.Location = new System.Drawing.Point(6, 63);
             this.lblGenNum.Name = "lblGenNum";
-            this.lblGenNum.Size = new System.Drawing.Size(51, 55);
+            this.lblGenNum.Size = new System.Drawing.Size(209, 55);
             this.lblGenNum.TabIndex = 4;
             this.lblGenNum.Text = "0";
+            this.lblGenNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblGen
             // 

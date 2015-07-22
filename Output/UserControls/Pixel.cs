@@ -67,14 +67,7 @@ namespace FrankVillasenor.Life.UI.UserControls
 
         private void Pixel_StateChanged(object sender, EventArgs e)
         {
-            if (this.State)
-            {
-                this.BackColor = Color.DarkBlue;
-            }
-            else
-            {
-                this.BackColor = Color.White;
-            }
+            this.BackColor = this.State ? Color.DarkBlue : Color.White;
         }
 
         #region [ Properties ]

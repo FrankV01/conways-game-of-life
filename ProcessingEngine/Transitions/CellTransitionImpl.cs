@@ -118,10 +118,7 @@ namespace FrankVillasenor.Life.ProcessingEngine.Transitions
                     }
                 }
 
-            if (NumNeighbours == 2 || NumNeighbours == 3)
-                return true;
-            else
-                return false;
+            return NumNeighbours == 2 || NumNeighbours == 3;
         }
 
         /// <summary>
